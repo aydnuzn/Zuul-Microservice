@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+zuul:
+  routes:
+    metro-api:
+      service-id: METRO-SERVICE
+      path: /metro/**
+      strip-prefix: false
+      url: "http://localhost:8090/"
+    vending-api:
+      service-id: VENDING-SERVICE
+      path: /vending/**
+      strip-prefix: false
+      url: "http://localhost:8091/"
+    auth-api:
+      service-id: AUTH-SERVICE
+      path: /auth/**
+      strip-prefix: false
+      url: "http://localhost:8086/"
